@@ -20,13 +20,15 @@ def swap_faces():
     your_image = request.files['your_image']
     target_image = request.files['target_image']
 
-   output = replicate_client.run(
-    "cdingram/face-swap",
-    input={"source_image": your_image, "target_image": target_image}
-)
-
+    output = replicate_client.run(
+        "cdingram/face-swap",
+        input={
+            "source_image": your_image,
+            "target_image": target_image
+        }
+    )
 
     return jsonify({"image": output})
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host="0.0.0.0", port=5000)
