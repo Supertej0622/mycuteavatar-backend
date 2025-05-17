@@ -20,10 +20,11 @@ def swap_faces():
     your_image = request.files['your_image']
     target_image = request.files['target_image']
 
-    output = replicate_client.run(
-        "supertej0622/rvajtejas:33d819e",
-        input={"source_image": your_image, "target_image": target_image}
-    )
+   output = replicate_client.run(
+    "cdingram/face-swap",
+    input={"source_image": your_image, "target_image": target_image}
+)
+
 
     return jsonify({"image": output})
 
