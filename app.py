@@ -21,7 +21,7 @@ def swap_faces():
     target_image = request.files['target_image']
 
     output = replicate_client.run(
-        "cdingram/face-swap",
+        "codeplugtech/face-swap",
         input={
             "source_image": your_image,
             "target_image": target_image
